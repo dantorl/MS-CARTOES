@@ -22,11 +22,9 @@ public class CartaoService {
     private ClienteClient clienteClient;
 
     public Cartao cadastrarCartao(Cartao cartao) {
-        try{
-            clienteClient.getById(cartao.getClienteId());
-        } catch (Exception e){
-            throw new ClienteNotFoundException();
-        }
+        //try{ clienteClient.getById(cartao.getClienteId()); } catch (Exception e){throw new ClienteNotFoundException();}
+
+        clienteClient.getById(cartao.getClienteId());
         cartao.setAtivo(false);
 
         Optional<Cartao> cartaoOptional = cartaoRepository.findByNumero(cartao.getNumero());

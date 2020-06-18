@@ -21,21 +21,16 @@ public class PagamentoService {
     private CartaoClient cartaoClient;
 
     public Pagamento cadastrarPagamento(Pagamento pagamento) {
-        try{
-            cartaoClient.getById(pagamento.getCartaoId());
-        } catch (Exception e){
-            throw new CartaoNotFoundException();
-        }
+        //*try{cartaoClient.getById(pagamento.getCartaoId());} catch (Exception e){throw new CartaoNotFoundException();}
+        cartaoClient.getById(pagamento.getCartaoId());
         Pagamento pagamentoObjeto = pagamentoRepository.save(pagamento);
         return pagamentoObjeto;
     }
 
     public List<Pagamento> buscarPagamentos(Integer id) {
-        try{
-            cartaoClient.getById(id);
-        } catch (Exception e){
-            throw new CartaoNotFoundException();
-        }
+        //*try{cartaoClient.getById(id);} catch (Exception e){throw new CartaoNotFoundException();}
+        cartaoClient.getById(id);
+
         List<Pagamento> pagamentos = pagamentoRepository.findByCartaoId(id);
         return pagamentos;
     }
