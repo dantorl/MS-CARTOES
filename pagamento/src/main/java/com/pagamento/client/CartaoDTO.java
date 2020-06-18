@@ -2,7 +2,7 @@ package com.pagamento.client;
 
 public class CartaoDTO {
 
-    private Integer idCartao;
+    private Integer id;
 
     private String numero;
 
@@ -10,12 +10,12 @@ public class CartaoDTO {
 
     private Boolean ativo;
 
-    public Integer getIdCartao() {
-        return idCartao;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdCartao(Integer idCartao) {
-        this.idCartao = idCartao;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNumero() {

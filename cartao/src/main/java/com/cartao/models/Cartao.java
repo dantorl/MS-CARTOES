@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class Cartao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCartao;
+    private Integer id;
 
     @NotNull
     @Size(min = 9, max = 9, message = "O número do cartão deve ter 9 digitos")
@@ -24,19 +24,19 @@ public class Cartao {
     public Cartao() {
     }
 
-    public Cartao(Integer idCartao, @NotNull String numero, @NotNull Integer clienteId, Boolean ativo) {
-        this.idCartao = idCartao;
+    public Cartao(Integer id, @NotNull String numero, @NotNull Integer clienteId, Boolean ativo) {
+        this.id = id;
         this.numero = numero;
         this.clienteId = clienteId;
         this.ativo = ativo;
     }
 
-    public Integer getIdCartao() {
-        return idCartao;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdCartao(Integer idCartao) {
-        this.idCartao = idCartao;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNumero() {

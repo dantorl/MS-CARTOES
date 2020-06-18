@@ -3,23 +3,23 @@ package com.cartao.client;
 
 public class ClienteDTO {
 
-    private Integer IdCliente;
+    private Integer id;
 
-    private String nome;
+    private String name;
 
-    public Integer getIdCliente() {
-        return IdCliente;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        IdCliente = idCliente;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 }

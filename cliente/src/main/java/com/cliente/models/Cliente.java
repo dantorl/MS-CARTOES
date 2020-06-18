@@ -9,33 +9,33 @@ import javax.validation.constraints.Size;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdCliente;
+    private Integer id;
 
     @Size(min = 4, max = 100, message = "O nome deve ter no minimo 4 caracteres e no maximo 100")
     @NotNull
-    private String nome;
+    private String name;
 
     public Cliente() {
     }
 
-    public Cliente(Integer idCliente, @Size(min = 4, max = 100, message = "O nome deve ter no minimo 4 caracteres e no maximo 100") @NotNull String nome) {
-        IdCliente = idCliente;
-        this.nome = nome;
+    public Cliente(Integer id, @Size(min = 4, max = 100, message = "O nome deve ter no minimo 4 caracteres e no maximo 100") @NotNull String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Integer getIdCliente() {
-        return IdCliente;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        IdCliente = idCliente;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 }
