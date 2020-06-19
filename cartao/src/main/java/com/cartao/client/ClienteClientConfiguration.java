@@ -16,12 +16,12 @@ public class ClienteClientConfiguration {
         return new ClienteClientErrorDecoder();
     }
 
-    /*@Bean
+    @Bean
     public Feign.Builder builder() {
         FeignDecorators decorators = FeignDecorators.builder()
                 .withFallbackFactory(ClienteClientFallback::new)
                 .build();
 
         return Resilience4jFeign.builder(decorators);
-    }*/
+    }
 }

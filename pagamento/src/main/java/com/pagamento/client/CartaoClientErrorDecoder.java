@@ -13,12 +13,8 @@ public class CartaoClientErrorDecoder implements ErrorDecoder {
         if(response.status() == 400) {
             return new CartaoNotFoundException();
         }else{
-            if (response.status() == 500){
-                //não está funcionando
-                return new CartaoOffilineException();
-            }else {
+
                 return errorDecoder.decode(s, response);
             }
-          }
     }
 }

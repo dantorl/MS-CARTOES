@@ -18,12 +18,8 @@ public class ClienteClientErrorDecoder implements ErrorDecoder {
         if(response.status() == 400) {
             return new ClienteNotFoundException();
         }else {
-            if (response.status() == 500){
-                //Não está funcionando
-                return new ClienteOfflineException();
-            }else {
                 return errorDecoder.decode(s, response);
-            }
+
         }
     }
 }

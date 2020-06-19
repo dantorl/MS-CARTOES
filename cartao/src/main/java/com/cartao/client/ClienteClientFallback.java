@@ -1,8 +1,10 @@
 package com.cartao.client;
 
+import com.cartao.exceptions.ClienteOfflineException;
 import com.netflix.client.ClientException;
 
 import java.io.IOException;
+import java.net.ConnectException;
 
 public class ClienteClientFallback implements ClienteClient{
     private Exception cause;
@@ -13,14 +15,12 @@ public class ClienteClientFallback implements ClienteClient{
 
     @Override
     public ClienteDTO getById(Integer id) {
-        if(cause instanceof RuntimeException) {
-            throw new RuntimeException("O serviço de carro está offline");
+
+         if(cause instanceof IOException || cause instanceof ConnectException || cause instanceof ClientException || cause.getLocalizedMessage() != null)  {
+
+            throw new ClienteOfflineException();
+            //throw (RuntimeException) cause;
         }
-        System.out.println(cause.getCause());
-        // Cliente fake
-        ClienteDTO clienteDTO = new ClienteDTO();
-        clienteDTO.setId(-99);
-        clienteDTO.setName(cause.getClass().getName());
-        return clienteDTO;
+        throw (RuntimeException) cause;
     }
 }
