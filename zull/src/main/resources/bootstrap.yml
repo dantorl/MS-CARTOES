@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zuul
+  profiles:
+    active: development
+  cloud:
+    config:
+      uri: http://localhost:9001
+
+#para ignorar serviços
+#zuul:
+#  ignoredServices: '*'
+
